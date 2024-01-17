@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="Country" id="Country" placeholder="Select Country" onchange="selectstate()">
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+    </select>
+    <p id="state"></p>
+    <p id="city"></p>
+    <script>
+        var city1 = ["Noida", "Ghazibad", "Meerut", "Kanpur"];
+        var city2 = ["Gurugram", "Farrukhnagar", "Manesar", "Faridabad"];
+        var city3 = ["Almora", "Nainital", "Haridwar", "Dehradun"];
+        var city4 = ["Noida", "Ghazibad", "Meerut", "Kanpur"];
+        var state1 = ["UP", "HR", "UK", "UP"];
+        var state2 = ["A", "B", "C", "D"];
+        var state3 = ["E", "F", "G", "H"];
+        var state4 = ["I", "J", "K", "L"];
+        var selectconn = document.getElementById("Country");
+        var selectcity = document.getElementById("state");
+
+        function selectstate() {
+            var selectedCountry = selectconn.value;
+            var cities;
+
+            if (selectedCountry == "India") {
+                cities = city1;
+            } else if (selectedCountry == "China") {
+                cities = city2;
+            } else if (selectedCountry == "Bangladesh") {
+                cities = city3;
+            } else if (selectedCountry == "Sri Lanka") {
+                cities = city4;
+            }
+
+            var citySelect = document.createElement("select");
+            citySelect.name = "city";
+            citySelect.id = "city";
+            citySelect.placeholder = "Select City";
+            for (var i = 0; i < cities.length; i++) {
+                var option = document.createElement("option");
+                option.value = cities[i];
+                option.text = cities[i];
+                citySelect.appendChild(option);
+            }
+
+            var existingCitySelect = document.getElementById("city");
+            if (existingCitySelect) {
+                existingCitySelect.parentNode.replaceChild(citySelect, existingCitySelect);
+            } else {
+                document.body.appendChild(citySelect);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  color: white;
+  background:  #081b29;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  position: relative;
+  font-size: 25px;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.navbar a {
+  display: inline-block;
+  font-size: 25px;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.navbar a:hover {
+  color: #29c3cc;
+  text-shadow: 0 0 5px #29c3cc;
+}
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background: #091b2a;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home-content {
+  max-width: 600px;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 20px;
+  border: 2px solid #29c3cc;
+  color: #29c3cc;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.home-sci a:hover {
+  background: #29c3cc;
+  color: #081b29;
+  box-shadow: 0 0 20px #29c3cc;
+}
+.btn-box {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #29c3cc;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+}
+.btn-box:hover {
+  box-shadow: 0 0 5px #29c3cc, 0 0 25px #29c3cc, 0 0 50px #29c3cc,
+    0 0 200px #29c3cc;
+}
+.text {
+  color: #29c3cc;
+}
+.image {
+  margin-left: -50px;
+  margin-right: 100px;
+  border: 2px solid #29c3cc;
+  border-radius: 200px;
+  box-shadow: 0 0 5px #29c3cc, 0 0 25px #29c3cc, 0 0 50px #29c3cc,
+    0 0 200px #29c3cc;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+/*section about css*/
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 70px 10% 0;
+}
+.about-Img.img{
+    padding: 20%;
+    max-width: 630px;
+    height: auto;
+    width:100%;
+    border-radius: 8px;
+}
+.about-text h2{
+    font-size: 60px;
+}
+.about-text h4{
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.about-text span{
+    color:#29c3cc;
+}
+/* Style the container for the "My Expertise" section */
+.expertise-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Add some space between the grid items */
+  }
+  
+  /* Style each expertise item */
+.expertise-item {
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    color:aliceblue;
+   /*background-color: #f9f9f9;*/
+  }
+  
+  /* Style the text within each expertise item */
+  
+.expertise-description {
+    font-size: 20px;
+    color:aliceblue;
+  }
+.button{
+    
+}
